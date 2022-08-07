@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+        </style> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="header">
+            <h1 id="server-name">Server Name</h1>
+        </div>
+        <div class="content">
+            <div class="parent">
+                <div class="panel-header div1">Info</div>
+                <div class="panel-header div2">Rules</div>
+                <div class="panel-content div3" id="map-info">Map: placeholder_mapname</div>
+                <div class="panel-content div4" id="gm-info">Gamemode: long-gamemode-name</div>
+                <div class="panel-content div5" id="mp-info">Max Players: 128 </div>
+                <div class="panel-content div6">Don't mess with other people's stuff. If they want help, they'll ask.</div>
+                <div class="panel-content div7">Don't noclip around if you're PvPing. If you want to fight, fight fair.</div>
+                <div class="panel-content div8">If people are clearly building rather than PvPing, leave them be.</div>
+                <div class="panel-content div9"></div>
+                <div class="panel-progress div10">
+                    <h2 id="loading-status">Loading status here</h2>
+                </div>
+            </div> 
+        </div>
+        <script>
+            nameHeader = document.getElementById("server-name")
+            mapInfoItem = document.getElementById("map-info")
+            gmInfoItem = document.getElementById("gm-info")
+            mpInfoItem = document.getElementById("mp-info")
+            loadingStatus = document.getElementById("loading-status")
+            function GameDetails(servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language) {
+                nameHeader.innerHTML = servername;
+                mapInfoItem.innerHTML = "Map: " + mapname;
+                gmInfoItem.innerHTML = "Gamemode: " + gamemode;
+                mpInfoItem.innerHTML = "Max Players: " + maxplayers;
+                loadingStatus.innerHTML = "Retrieving server info...";
+            }
+            function SetStatusChanged(status) {
+                loadingStatus.innerHTML = status;
+            }
+
+        </script>
+    </body>
+</html>
